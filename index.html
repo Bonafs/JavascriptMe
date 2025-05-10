@@ -2,31 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JavascriptMe - Master JavaScript</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Learning Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </head>
 <body>
     <nav>
-        <h1>JavascriptMe</h1>
+        <h1>JavaScript Learning Hub</h1>
         <button onclick="toggleTheme()">Toggle Dark Mode</button>
     </nav>
 
     <div class="container">
-        <section id="auth">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <input type="text" id="username" placeholder="Username">
-                <input type="password" id="password" placeholder="Password">
-                <button type="submit">Login</button>
-            </form>
-            <p id="authMessage"></p>
+        <section id="variables">
+            <h2>JavaScript Variables</h2>
+            <button onclick="showVariablesExample()">Show Examples</button>
+            <pre id="variablesOutput"></pre>
         </section>
 
-        <section id="learning">
-            <h2>Learn JavaScript</h2>
-            <button onclick="showExample()">Show Example</button>
-            <p id="exampleOutput"></p>
+        <section id="dataTypes">
+            <h2>JavaScript Data Types</h2>
+            <button onclick="showDataTypesExample()">Show Examples</button>
+            <pre id="dataTypesOutput"></pre>
+        </section>
+
+        <section id="dataStructures">
+            <h2>JavaScript Data Structures and Methods</h2>
+            <button onclick="showDataStructuresExample()">Show Examples</button>
+            <pre id="dataStructuresOutput"></pre>
+        </section>
+
+        <section id="functions">
+            <h2>JavaScript Functions</h2>
+            <button onclick="showFunctionsExample()">Show Examples</button>
+            <pre id="functionsOutput"></pre>
+        </section>
+
+        <section id="operators">
+            <h2>JavaScript Operators and Flow Control</h2>
+            <button onclick="showOperatorsExample()">Show Examples</button>
+            <pre id="operatorsOutput"></pre>
+        </section>
+
+        <section id="iteration">
+            <h2>JavaScript Iteration</h2>
+            <button onclick="showIterationExample()">Show Examples</button>
+            <pre id="iterationOutput"></pre>
+        </section>
+
+        <section id="ternaryArrow">
+            <h2>Ternary Expressions and Arrow Functions</h2>
+            <button onclick="showTernaryArrowExample()">Show Examples</button>
+            <pre id="ternaryArrowOutput"></pre>
         </section>
     </div>
 </body>

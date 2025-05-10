@@ -3,27 +3,77 @@ function toggleTheme() {
     document.body.classList.toggle("dark-mode");
 }
 
-// Login Authentication
-document.getElementById("loginForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+// JavaScript Variables
+function showVariablesExample() {
+    const examples = `
+1. var: Old way to declare variables.
+2. let: Modern way to declare variables that can change.
+3. const: Declare variables that cannot change.
 
-    let response = await fetch('/login', {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-    });
+Example:
+let age = 25;
+const name = "John";
+var city = "New York";
+    `;
+    document.getElementById("variablesOutput").innerText = examples;
+}
 
-    let data = await response.json();
-    document.getElementById("authMessage").innerText = data.error || data.message;
-});
+// JavaScript Data Types
+function showDataTypesExample() {
+    const examples = `
+1. String: Text data, e.g., "Hello".
+2. Number: Numeric data, e.g., 42.
+3. Boolean: True or false values, e.g., true.
+4. Object: Key-value pairs, e.g., { name: "Alice", age: 30 }.
+5. Array: List of values, e.g., [1, 2, 3].
+    `;
+    document.getElementById("dataTypesOutput").innerText = examples;
+}
 
-// JavaScript Learning Example
-function showExample() {
-    let example = "Loop Example: ";
-    for (let i = 1; i <= 5; i++) {
-        example += i + " ";
-    }
-    document.getElementById("exampleOutput").innerText = example;
+// JavaScript Data Structures and Methods
+function showDataStructuresExample() {
+    const examples = `
+1. Arrays: List of values.
+2. Objects: Key-value pairs.
+3. Methods: push(), pop(), map(), filter(), reduce().
+    `;
+    document.getElementById("dataStructuresOutput").innerText = examples;
+}
+
+// JavaScript Functions
+function showFunctionsExample() {
+    const examples = `
+1. Functions: Reusable blocks of code.
+2. Arrow Functions: Shorter syntax for functions.
+    `;
+    document.getElementById("functionsOutput").innerText = examples;
+}
+
+// JavaScript Operators and Flow Control
+function showOperatorsExample() {
+    const examples = `
+1. Arithmetic Operators: +, -, *, /.
+2. Comparison Operators: ==, ===, !=, !==.
+3. Logical Operators: &&, ||, !.
+    `;
+    document.getElementById("operatorsOutput").innerText = examples;
+}
+
+// JavaScript Iteration
+function showIterationExample() {
+    const examples = `
+1. for loop: Repeat a block of code.
+2. while loop: Repeat while a condition is true.
+3. forEach: Iterate over an array.
+    `;
+    document.getElementById("iterationOutput").innerText = examples;
+}
+
+// Ternary Expressions and Arrow Functions
+function showTernaryArrowExample() {
+    const examples = `
+1. Ternary Expressions: Shorthand for if-else.
+2. Arrow Functions: Shorter syntax for functions.
+    `;
+    document.getElementById("ternaryArrowOutput").innerText = examples;
 }
