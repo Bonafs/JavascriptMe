@@ -2,167 +2,176 @@
 function toggleTheme() {
     document.body.classList.toggle("dark-mode");
 }
-// Dark Mode Toggle
-function toggleTheme() {
-    document.body.classList.toggle("dark-mode");
-}
 
 // JavaScript Variables
 function showVariablesExample() {
-    const example = `
-Variables are used to store data in JavaScript. There are three ways to declare variables:
-1. var: The old way to declare variables (not recommended anymore).
-2. let: Used for variables that can change.
-3. const: Used for variables that should not change.
+    const examples = `
+1. var:
+   var x = 10;
+   console.log(x);
 
-Example:
-let age = 25; // A variable that can change
-const name = "John"; // A variable that cannot change
-var city = "New York"; // Old way of declaring variables
+2. let:
+   let y = 20;
+   y = 30;
+   console.log(y);
+
+3. const:
+   const z = 40;
+   console.log(z);
+
+4. Block Scope:
+   {
+       let a = 50;
+       console.log(a);
+   }
+
+5. Global Scope:
+   var globalVar = "I am global";
+   console.log(globalVar);
+
+6. Hoisting with var:
+   console.log(hoistedVar);
+   var hoistedVar = "Hoisted";
+
+7. No Hoisting with let:
+   // console.log(notHoisted); // Error
+   let notHoisted = "Not Hoisted";
+
+8. Reassignment:
+   let reassignable = 100;
+   reassignable = 200;
+   console.log(reassignable);
+
+9. Constants:
+   const constantValue = 300;
+   // constantValue = 400; // Error
+
+10. Template Literals:
+   let name = "Alice";
+   console.log(\`Hello, \${name}!\`);
+
+11. Dynamic Typing:
+   let dynamic = 42;
+   dynamic = "Now I'm a string";
+   console.log(dynamic);
+
+12. Undefined:
+   let undefinedVar;
+   console.log(undefinedVar);
+
+13. Null:
+   let nullVar = null;
+   console.log(nullVar);
+
+14. Arrays:
+   let arr = [1, 2, 3];
+   console.log(arr);
+
+15. Objects:
+   let obj = { key: "value" };
+   console.log(obj);
+
+16. Functions as Variables:
+   let greet = function() {
+       return "Hello!";
+   };
+   console.log(greet());
+
+17. Arrow Functions:
+   let arrowGreet = () => "Hello, Arrow!";
+   console.log(arrowGreet());
+
+18. Boolean Variables:
+   let isTrue = true;
+   console.log(isTrue);
+
+19. Numbers:
+   let num = 123;
+   console.log(num);
+
+20. Strings:
+   let str = "JavaScript";
+   console.log(str);
     `;
-    document.getElementById("variablesOutput").innerText = example;
+    document.getElementById("variablesOutput").innerText = examples;
 }
 
 // JavaScript Data Types
 function showDataTypesExample() {
-    const example = `
-JavaScript has different types of data:
-1. String: Text data, e.g., "Hello".
-2. Number: Numeric data, e.g., 42.
-3. Boolean: True or false values, e.g., true.
-4. Object: A collection of key-value pairs, e.g., { name: "John", age: 25 }.
-5. Array: A list of values, e.g., [1, 2, 3].
-6. Null: An empty value, e.g., null.
-7. Undefined: A variable that has been declared but not assigned a value.
-
-Example:
-let name = "Alice"; // String
-let age = 30; // Number
-let isStudent = true; // Boolean
-let person = { name: "Alice", age: 30 }; // Object
-let numbers = [1, 2, 3]; // Array
-let emptyValue = null; // Null
-let notAssigned; // Undefined
-    `;
-    document.getElementById("dataTypesOutput").innerText = example;
-}
-
-// JavaScript Data Structures and Methods
-function showDataStructuresExample() {
-    const example = `
-JavaScript has built-in data structures like Arrays and Objects:
-1. Arrays: A list of values.
-   Methods: push(), pop(), shift(), unshift(), map(), filter(), reduce().
-2. Objects: A collection of key-value pairs.
-   Methods: Object.keys(), Object.values(), Object.entries().
-
-Example:
-let fruits = ["apple", "banana", "cherry"];
-fruits.push("orange"); // Adds "orange" to the end of the array
-console.log(fruits);
-
-let person = { name: "Alice", age: 30 };
-console.log(Object.keys(person)); // ["name", "age"]
-    `;
-    document.getElementById("dataStructuresOutput").innerText = example;
-}
-
-// JavaScript Functions
-function showFunctionsExample() {
-    const example = `
-Functions are blocks of code that perform a specific task. They can take inputs (parameters) and return outputs.
-
-Example:
-function greet(name) {
-    return "Hello, " + name + "!";
-}
-console.log(greet("Alice")); // "Hello, Alice!"
-    `;
-    document.getElementById("functionsOutput").innerText = example;
-}
-
-// JavaScript Operators and Flow Control
-function showOperatorsExample() {
-    const example = `
-Operators are symbols used to perform operations:
-1. Arithmetic Operators: +, -, *, /, %.
-2. Comparison Operators: ==, ===, !=, !==, >, <, >=, <=.
-3. Logical Operators: && (AND), || (OR), ! (NOT).
-
-Flow control determines the order in which code runs:
-1. if-else: Executes code based on a condition.
-2. switch: Executes code based on multiple conditions.
-
-Example:
-let age = 18;
-if (age >= 18) {
-    console.log("You are an adult.");
-} else {
-    console.log("You are a minor.");
-}
-    `;
-    document.getElementById("operatorsOutput").innerText = example;
-}
-
-// JavaScript Iteration
-function showIterationExample() {
-    const example = `
-Iteration means repeating a block of code. JavaScript has several ways to iterate:
-1. for loop: Repeats a block of code a fixed number of times.
-2. while loop: Repeats a block of code while a condition is true.
-3. forEach: Iterates over an array.
-
-Example:
-let numbers = [1, 2, 3];
-numbers.forEach(num => console.log(num)); // Prints 1, 2, 3
-    `;
-    document.getElementById("iterationOutput").innerText = example;
-}
-
-// JavaScript Ternary Expressions and Arrow Functions
-function showTernaryArrowExample() {
-    const example = `
-1. Ternary Expressions: A shorthand for if-else.
-   Syntax: condition ? valueIfTrue : valueIfFalse.
-
-Example:
-let age = 18;
-let status = age >= 18 ? "Adult" : "Minor";
-console.log(status); // "Adult"
-
-2. Arrow Functions: A shorthand for writing functions.
-   Syntax: (parameters) => { code }
-
-Example:
-let add = (a, b) => a + b;
-console.log(add(2, 3)); // 5
-    `;
-    document.getElementById("ternaryArrowOutput").innerText = example;
-}
-
-// JavaScript Data Types and Methods
-function showDataTypesExample() {
     const examples = `
 1. String:
-   let greeting = "Hello, World!";
-   console.log(greeting.toUpperCase()); // HELLO, WORLD!
+   let str = "Hello, World!";
+   console.log(str);
 
 2. Number:
    let num = 42;
-   console.log(num.toFixed(2)); // 42.00
+   console.log(num);
 
 3. Boolean:
-   let isJavaScriptFun = true;
-   console.log(isJavaScriptFun ? "Yes, it is!" : "No, it's not."); // Yes, it is!
+   let isTrue = true;
+   console.log(isTrue);
 
 4. Object:
-   let person = { name: "Alice", age: 30 };
-   console.log(Object.keys(person)); // ["name", "age"]
+   let obj = { name: "Alice", age: 30 };
+   console.log(obj);
 
 5. Array:
-   let fruits = ["apple", "banana", "cherry"];
-   fruits.push("orange");
-   console.log(fruits); // ["apple", "banana", "cherry", "orange"]
+   let arr = [1, 2, 3];
+   console.log(arr);
+
+6. Null:
+   let nullValue = null;
+   console.log(nullValue);
+
+7. Undefined:
+   let undefinedValue;
+   console.log(undefinedValue);
+
+8. BigInt:
+   let bigIntValue = 123456789012345678901234567890n;
+   console.log(bigIntValue);
+
+9. Symbol:
+   let sym = Symbol("unique");
+   console.log(sym);
+
+10. typeof Operator:
+   console.log(typeof str); // "string"
+
+11. String Methods:
+   console.log(str.toUpperCase());
+
+12. Array Methods:
+   console.log(arr.map(x => x * 2));
+
+13. Object Methods:
+   console.log(Object.keys(obj));
+
+14. Boolean Logic:
+   console.log(!isTrue);
+
+15. Number Methods:
+   console.log(num.toFixed(2));
+
+16. Template Literals:
+   console.log(\`Hello, \${obj.name}!\`);
+
+17. Nested Objects:
+   let nestedObj = { person: { name: "Bob", age: 25 } };
+   console.log(nestedObj.person.name);
+
+18. Nested Arrays:
+   let nestedArr = [[1, 2], [3, 4]];
+   console.log(nestedArr[0][1]);
+
+19. Combining Types:
+   let mixed = [1, "two", { three: 3 }];
+   console.log(mixed);
+
+20. Dynamic Typing:
+   let dynamic = "string";
+   dynamic = 123;
+   console.log(dynamic);
     `;
     document.getElementById("dataTypesOutput").innerText = examples;
 }
@@ -171,34 +180,90 @@ function showDataTypesExample() {
 function showDataStructuresExample() {
     const examples = `
 1. Arrays:
-   let numbers = [1, 2, 3, 4, 5];
-   let doubled = numbers.map(num => num * 2);
-   console.log(doubled); // [2, 4, 6, 8, 10]
+   let arr = [1, 2, 3];
+   console.log(arr);
 
 2. Objects:
-   let car = { brand: "Toyota", model: "Corolla", year: 2020 };
-   console.log(Object.values(car)); // ["Toyota", "Corolla", 2020]
+   let obj = { key: "value" };
+   console.log(obj);
 
-3. Nested Structures:
-   let library = [
-       { title: "Book A", author: "Author A" },
-       { title: "Book B", author: "Author B" }
-   ];
-   library.forEach(book => console.log(book.title));
+3. Sets:
+   let set = new Set([1, 2, 2, 3]);
+   console.log(set);
 
-4. Sets:
-   let uniqueNumbers = new Set([1, 2, 2, 3]);
-   console.log(uniqueNumbers); // Set { 1, 2, 3 }
+4. Maps:
+   let map = new Map();
+   map.set("key", "value");
+   console.log(map);
 
-5. Maps:
-   let userRoles = new Map();
-   userRoles.set("Alice", "Admin");
-   userRoles.set("Bob", "User");
-   console.log(userRoles.get("Alice")); // Admin
+5. Nested Structures:
+   let nested = { arr: [1, 2, 3], obj: { key: "value" } };
+   console.log(nested);
+
+6. Array Methods:
+   console.log(arr.map(x => x * 2));
+
+7. Object Methods:
+   console.log(Object.keys(obj));
+
+8. Set Methods:
+   set.add(4);
+   console.log(set);
+
+9. Map Methods:
+   map.set("newKey", "newValue");
+   console.log(map);
+
+10. Combining Structures:
+   let combined = [obj, set, map];
+   console.log(combined);
+
+11. Array Iteration:
+   arr.forEach(x => console.log(x));
+
+12. Object Iteration:
+   for (let key in obj) {
+       console.log(key, obj[key]);
+   }
+
+13. Set Iteration:
+   for (let value of set) {
+       console.log(value);
+   }
+
+14. Map Iteration:
+   for (let [key, value] of map) {
+       console.log(key, value);
+   }
+
+15. Array Filtering:
+   console.log(arr.filter(x => x > 1));
+
+16. Array Reducing:
+   console.log(arr.reduce((sum, x) => sum + x, 0));
+
+17. Object Destructuring:
+   let { key } = obj;
+   console.log(key);
+
+18. Array Destructuring:
+   let [first, second] = arr;
+   console.log(first, second);
+
+19. Spread Operator:
+   let newArr = [...arr, 4];
+   console.log(newArr);
+
+20. Rest Operator:
+   function sum(...nums) {
+       return nums.reduce((sum, x) => sum + x, 0);
+   }
+   console.log(sum(1, 2, 3));
     `;
     document.getElementById("dataStructuresOutput").innerText = examples;
 }
 
+// Add similar updates for Functions, Operators, Iteration, and Ternary Expressions/Arrow Functions
 // JavaScript Functions
 function showFunctionsExample() {
     const examples = `
@@ -228,6 +293,110 @@ function showFunctionsExample() {
        return n === 0 ? 1 : n * factorial(n - 1);
    }
    console.log(factorial(5)); // 120
+
+6. Anonymous Function:
+   let greet = function() {
+       return "Hello!";
+   };
+   console.log(greet());
+
+7. Immediately Invoked Function Expression (IIFE):
+   (function() {
+       console.log("IIFE executed!");
+   })();
+
+8. Function Returning a Function:
+   function outer() {
+       return function inner() {
+           return "Hello from inner!";
+       };
+   }
+   console.log(outer()());
+
+9. Function with Rest Parameters:
+   function sum(...nums) {
+       return nums.reduce((total, num) => total + num, 0);
+   }
+   console.log(sum(1, 2, 3, 4)); // 10
+
+10. Function with Spread Operator:
+   function multiply(a, b, c) {
+       return a * b * c;
+   }
+   let nums = [2, 3, 4];
+   console.log(multiply(...nums)); // 24
+
+11. Callback Function:
+   function processArray(arr, callback) {
+       return arr.map(callback);
+   }
+   console.log(processArray([1, 2, 3], num => num * 2)); // [2, 4, 6]
+
+12. Function with Destructuring:
+   function display({ name, age }) {
+       console.log(\`Name: \${name}, Age: \${age}\`);
+   }
+   display({ name: "Alice", age: 30 });
+
+13. Function with Default Object Parameter:
+   function displayUser(user = { name: "Guest", age: 0 }) {
+       console.log(\`Name: \${user.name}, Age: \${user.age}\`);
+   }
+   displayUser();
+
+14. Function with Template Literals:
+   function greet(name) {
+       return \`Hello, \${name}!\`;
+   }
+   console.log(greet("Alice"));
+
+15. Function with Conditional Logic:
+   function checkAge(age) {
+       return age >= 18 ? "Adult" : "Minor";
+   }
+   console.log(checkAge(20)); // Adult
+
+16. Function with Array Methods:
+   function doubleArray(arr) {
+       return arr.map(num => num * 2);
+   }
+   console.log(doubleArray([1, 2, 3])); // [2, 4, 6]
+
+17. Function with Object Methods:
+   function getKeys(obj) {
+       return Object.keys(obj);
+   }
+   console.log(getKeys({ name: "Alice", age: 30 })); // ["name", "age"]
+
+18. Function with Nested Functions:
+   function outer() {
+       function inner() {
+           return "Inner Function";
+       }
+       return inner();
+   }
+   console.log(outer());
+
+19. Function with Try-Catch:
+   function safeDivide(a, b) {
+       try {
+           if (b === 0) throw "Division by zero!";
+           return a / b;
+       } catch (error) {
+           return error;
+       }
+   }
+   console.log(safeDivide(10, 0)); // Division by zero!
+
+20. Function with Loops:
+   function sumArray(arr) {
+       let sum = 0;
+       for (let num of arr) {
+           sum += num;
+       }
+       return sum;
+   }
+   console.log(sumArray([1, 2, 3])); // 6
     `;
     document.getElementById("functionsOutput").innerText = examples;
 }
@@ -245,15 +414,25 @@ function showOperatorsExample() {
 3. Logical Operators:
    console.log(true && false); // false
 
-4. if-else:
+4. Assignment Operators:
+   let x = 10;
+   x += 5;
+   console.log(x); // 15
+
+5. Ternary Operator:
    let age = 18;
-   if (age >= 18) {
-       console.log("Adult");
+   let status = age >= 18 ? "Adult" : "Minor";
+   console.log(status); // Adult
+
+6. if-else:
+   let num = 10;
+   if (num > 5) {
+       console.log("Greater than 5");
    } else {
-       console.log("Minor");
+       console.log("5 or less");
    }
 
-5. switch:
+7. switch:
    let day = "Monday";
    switch (day) {
        case "Monday":
@@ -261,6 +440,61 @@ function showOperatorsExample() {
            break;
        default:
            console.log("Another day");
+   }
+
+8. typeof Operator:
+   console.log(typeof "Hello"); // string
+
+9. instanceof Operator:
+   console.log([] instanceof Array); // true
+
+10. Nullish Coalescing Operator:
+   let value = null ?? "Default";
+   console.log(value); // Default
+
+11. Optional Chaining:
+   let user = { name: "Alice" };
+   console.log(user?.address?.city); // undefined
+
+12. Bitwise Operators:
+   console.log(5 & 1); // 1
+
+13. Unary Operators:
+   let a = 5;
+   console.log(-a); // -5
+
+14. Spread Operator:
+   let arr = [1, 2, 3];
+   console.log([...arr, 4]); // [1, 2, 3, 4]
+
+15. Rest Operator:
+   function sum(...nums) {
+       return nums.reduce((total, num) => total + num, 0);
+   }
+   console.log(sum(1, 2, 3)); // 6
+
+16. Destructuring Assignment:
+   let [first, second] = [1, 2];
+   console.log(first, second); // 1, 2
+
+17. Short-Circuit Evaluation:
+   console.log(false || "Default"); // Default
+
+18. Conditional (Chained):
+   let score = 85;
+   let grade = score > 90 ? "A" : score > 80 ? "B" : "C";
+   console.log(grade); // B
+
+19. Loop with Break:
+   for (let i = 0; i < 10; i++) {
+       if (i === 5) break;
+       console.log(i);
+   }
+
+20. Loop with Continue:
+   for (let i = 0; i < 10; i++) {
+       if (i % 2 === 0) continue;
+       console.log(i);
    }
     `;
     document.getElementById("operatorsOutput").innerText = examples;
@@ -296,6 +530,84 @@ function showIterationExample() {
    for (let char of "JavaScript") {
        console.log(char);
    }
+
+6. Nested Loops:
+   for (let i = 0; i < 3; i++) {
+       for (let j = 0; j < 2; j++) {
+           console.log(\`i: \${i}, j: \${j}\`);
+       }
+   }
+
+7. Iterating Objects:
+   let obj = { name: "Alice", age: 30 };
+   for (let key in obj) {
+       console.log(key, obj[key]);
+   }
+
+8. Iterating Sets:
+   let set = new Set([1, 2, 3]);
+   for (let value of set) {
+       console.log(value);
+   }
+
+9. Iterating Maps:
+   let map = new Map();
+   map.set("key1", "value1");
+   map.set("key2", "value2");
+   for (let [key, value] of map) {
+       console.log(key, value);
+   }
+
+10. Array map():
+   let arr = [1, 2, 3];
+   console.log(arr.map(x => x * 2)); // [2, 4, 6]
+
+11. Array filter():
+   console.log(arr.filter(x => x > 1)); // [2, 3]
+
+12. Array reduce():
+   console.log(arr.reduce((sum, x) => sum + x, 0)); // 6
+
+13. Array forEach():
+   arr.forEach(x => console.log(x));
+
+14. Iterating Strings:
+   for (let char of "Hello") {
+       console.log(char);
+   }
+
+15. Iterating Nested Arrays:
+   let nested = [[1, 2], [3, 4]];
+   for (let arr of nested) {
+       console.log(arr);
+   }
+
+16. Iterating with Index:
+   arr.forEach((value, index) => console.log(index, value));
+
+17. Infinite Loop (with Break):
+   let i = 0;
+   while (true) {
+       console.log(i);
+       if (i === 5) break;
+       i++;
+   }
+
+18. Iterating Backwards:
+   for (let i = arr.length - 1; i >= 0; i--) {
+       console.log(arr[i]);
+   }
+
+19. Iterating with Conditions:
+   for (let i = 0; i < 10; i++) {
+       if (i % 2 === 0) console.log(i);
+   }
+
+20. Iterating Objects with Object.entries():
+   let user = { name: "Alice", age: 30 };
+   for (let [key, value] of Object.entries(user)) {
+       console.log(key, value);
+   }
     `;
     document.getElementById("iterationOutput").innerText = examples;
 }
@@ -315,6 +627,92 @@ function showTernaryArrowExample() {
 3. Combining Both:
    let isEven = num => num % 2 === 0 ? "Even" : "Odd";
    console.log(isEven(3)); // Odd
+
+4. Nested Ternary:
+   let score = 85;
+   let grade = score > 90 ? "A" : score > 80 ? "B" : "C";
+   console.log(grade); // B
+
+5. Arrow Function with Default Parameters:
+   let greet = (name = "Guest") => \`Hello, \${name}!\`;
+   console.log(greet()); // Hello, Guest
+
+6. Arrow Function Returning Object:
+   let createUser = (name, age) => ({ name, age });
+   console.log(createUser("Alice", 30));
+
+7. Arrow Function with Rest Parameters:
+   let sum = (...nums) => nums.reduce((total, num) => total + num, 0);
+   console.log(sum(1, 2, 3)); // 6
+
+8. Arrow Function with Spread Operator:
+   let multiply = (a, b, c) => a * b * c;
+   let nums = [2, 3, 4];
+   console.log(multiply(...nums)); // 24
+
+9. Arrow Function with Array Methods:
+   let arr = [1, 2, 3];
+   console.log(arr.map(x => x * 2)); // [2, 4, 6]
+
+10. Arrow Function with Conditional Logic:
+   let checkAge = age => age >= 18 ? "Adult" : "Minor";
+   console.log(checkAge(20)); // Adult
+
+11. Arrow Function with Template Literals:
+   let greetUser = name => \`Hello, \${name}!\`;
+   console.log(greetUser("Alice"));
+
+12. Arrow Function with Object Destructuring:
+   let display = ({ name, age }) => \`Name: \${name}, Age: \${age}\`;
+   console.log(display({ name: "Alice", age: 30 }));
+
+13. Arrow Function with Array Destructuring:
+   let sumFirstTwo = ([a, b]) => a + b;
+   console.log(sumFirstTwo([1, 2, 3])); // 3
+
+14. Arrow Function with Nested Functions:
+   let outer = () => {
+       let inner = () => "Inner Function";
+       return inner();
+   };
+   console.log(outer());
+
+15. Arrow Function with Try-Catch:
+   let safeDivide = (a, b) => {
+       try {
+           if (b === 0) throw "Division by zero!";
+           return a / b;
+       } catch (error) {
+           return error;
+       }
+   };
+   console.log(safeDivide(10, 0)); // Division by zero!
+
+16. Arrow Function with Loops:
+   let sumArray = arr => {
+       let sum = 0;
+       for (let num of arr) {
+           sum += num;
+       }
+       return sum;
+   };
+   console.log(sumArray([1, 2, 3])); // 6
+
+17. Arrow Function with Higher-Order Function:
+   let doubleArray = arr => arr.map(num => num * 2);
+   console.log(doubleArray([1, 2, 3])); // [2, 4, 6]
+
+18. Arrow Function with Object Methods:
+   let getKeys = obj => Object.keys(obj);
+   console.log(getKeys({ name: "Alice", age: 30 })); // ["name", "age"]
+
+19. Arrow Function with Nested Arrays:
+   let nestedSum = arr => arr.flat().reduce((sum, num) => sum + num, 0);
+   console.log(nestedSum([[1, 2], [3, 4]])); // 10
+
+20. Arrow Function with Chained Methods:
+   let processArray = arr => arr.filter(x => x > 1).map(x => x * 2);
+   console.log(processArray([1, 2, 3])); // [4, 6]
     `;
     document.getElementById("ternaryArrowOutput").innerText = examples;
 }
