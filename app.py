@@ -20,28 +20,3 @@ class User(db.Model):
 def home():
     return render_template("index.html")
 
-@app.route('/register', methods=['POST'])
-def register():
-    data = request.get_json()
-    hashed_password = generate_password_hash(data['password'], method='sha256')
-    new_user = User(username=data['username'], password=hashed_password)
-    db.session.add(new_user)
-    db.session.commit()
-    return jsonify({"message": "User registered successfully!"})
-
-@app.route('/login', methods=['POST'])
-def login():
-    data = request.get_json()
-    user = User.query.filter_by(username=data['username']).first()
-    if user and check_password_hash(user.password, data['password']):
-        session['user'] = user.username
-        return jsonify({"message": f"Welcome, {user.username}!"})
-    return jsonify({"error": "Invalid credentials"}), 401
-
-@app.route('/logout', methods=['POST'])
-def logout():
-    session.pop('user', None)
-    return jsonify({"message": "Logged out successfully!"})
-
-if __name__ == '__main__':
-    app.run(debug=True)
