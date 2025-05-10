@@ -3,25 +3,27 @@ function toggleTheme() {
     document.body.classList.toggle("dark-mode");
 }
 
-// Chart.js Visualization
-function renderChart() {
-    let chartCanvas = document.getElementById("chartCanvas");
-    if (chartCanvas) {
-        let ctx = chartCanvas.getContext("2d");
-        new Chart(ctx, {
-            type: 'bar',
-            data: { labels: ["A", "B", "C", "D"], datasets: [{ label: "Data Points", data: [12, 19, 3, 5] }] }
-        });
-    } else {
-        console.warn("Chart canvas not found.");
-    }
-}
+// Login Authentication
+document.getElementById("loginForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
 
-// Smooth Animations
-document.addEventListener("DOMContentLoaded", function () {
-    let sections = document.querySelectorAll("section");
-    sections.forEach(section => section.classList.add("fade-in"));
+    let response = await fetch('/login', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+    });
+
+    let data = await response.json();
+    document.getElementById("authMessage").innerText = data.error || data.message;
 });
 
-// Initialize Chart
-renderChart();
+// JavaScript Learning Example
+function showExample() {
+    let example = "Loop Example: ";
+    for (let i = 1; i <= 5; i++) {
+        example += i + " ";
+    }
+    document.getElementById("exampleOutput").innerText = example;
+}

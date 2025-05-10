@@ -2,32 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Learning Hub</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>JavascriptMe - Master JavaScript</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">JavaScript Learning Hub</a>
-            <button class="btn btn-light" onclick="toggleTheme()">Toggle Dark Mode</button>
-        </div>
+    <nav>
+        <h1>JavascriptMe</h1>
+        <button onclick="toggleTheme()">Toggle Dark Mode</button>
     </nav>
 
-    <div class="container mt-4">
-        <section id="basics">
-            <h2>JavaScript Basics</h2>
-            <button class="btn btn-primary" onclick="showExample()">Show Example</button>
+    <div class="container">
+        <section id="auth">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+            <p id="authMessage"></p>
+        </section>
+
+        <section id="learning">
+            <h2>Learn JavaScript</h2>
+            <button onclick="showExample()">Show Example</button>
             <p id="exampleOutput"></p>
         </section>
-
-        <section id="charts">
-            <h2>Data Visualization</h2>
-            <canvas id="chartCanvas"></canvas>
-        </section>
     </div>
-
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
